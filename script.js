@@ -12,14 +12,88 @@ function getComputerChoice() {
   }
 }
 
-const buttons = document.querySelectorAll(".button");
-console.log(buttons);
+// // This does not work as this code apples across all buttons. We need specific values to be returned for each of the buttons
+// const buttons = document.querySelectorAll(".button");
+// console.log(buttons);
 
-// const getHumanChoice = function {
-//     document.querySelectorAll(".button", function( {
-//         for (let i = 0; i < )
-//     }))
-// }
+// const getHumanChoice = function () {
+//   for (let i = 0; i < buttons.length; i++) {
+//     buttons[i].addEventListener("click", function () {
+//       console.log("The button is clicked");
+//     });
+//   }
+// };
+
+// getHumanChoice(buttons);
+
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
+let message = document.querySelector(".message");
+let userScore = document.querySelector(".player");
+let compScore = document.querySelector(".computer");
+
+const getHumanChoice = function () {
+  if (
+    rock.addEventListener("click", function () {
+      return rock;
+    })
+  );
+  else if (
+    paper.addEventListener("click", () => {
+      return paper;
+    })
+  );
+  else if (
+    scissors.addEventListener("click", () => {
+      return scissors;
+    })
+  );
+};
+
+let playerScore = 0;
+let computerScore = 0;
+
+function playRound(computerChoice, humanChoice) {
+  console.log(computerChoice, typof(computerChoice));
+  console.log(humanChoice, typeof humanChoice);
+
+  if (computerChoice === humanChoice) {
+    message.textContent = "There is no winner! You both picked the same.";
+    // return undefined;
+  } else if (computerChoice === "rock" && humanChoice === "paper") {
+    message.textContent = "Player wins! Paper beats rock.";
+    return "player";
+  } else if (computerChoice === "paper" && humanChoice === "rock") {
+    message.textContent = "Computer wins! Paper beats rock.";
+    return "computer";
+  } else if (computerChoice === "scissors" && humanChoice === "paper") {
+    message.textContent = "Computer wins! Scissors beats paper.";
+    return "computer";
+  } else if (computerChoice === "paper" && humanChoice === "scissors") {
+    message.textContent = "Player wins! Scissors beats paper.";
+    return "player";
+  } else if (computerChoice === "rock" && humanChoice === "scissors") {
+    message.textContent = "Computer wins! Rock beats scissors.";
+    return "computer";
+  } else if (computerChoice === "scissors" && humanChoice === "rock") {
+    message.textContent = "Player wins! Rock beats scissors.";
+    return "player";
+  }
+}
+
+let winner = playRound(getComputerChoice(), getHumanChoice());
+
+if (winner == "player") {
+  playerScore += 1;
+} else if (winner == "computer") {
+  computerScore += 1;
+}
+
+userScore.textContent = `Player: ${playerScore}`;
+compScore.textContent = `Computer: ${computerScore}`;
+
+// Initial Code before introducing UI:
 
 // const getHumanChoice = function() {
 //     return (prompt("Are you going to play 'rock', 'paper' or 'scissors'?: ").toLowerCase())
