@@ -23,8 +23,8 @@ function playGame() {
       } else if (winner === "computer") {
         compScore += 1;
       }
-      playerScore.textContent = userScore;
-      computerScore.textContent = compScore;
+      playerScore.textContent = `Player: ${userScore}`;
+      computerScore.textContent = `Computer: ${compScore}`;
     }
     if (userScore === 5) {
       message.textContent = "Player wins the game!";
@@ -44,8 +44,8 @@ function playGame() {
       } else if (winner === "computer") {
         compScore += 1;
       }
-      playerScore.textContent = userScore;
-      computerScore.textContent = compScore;
+      playerScore.textContent = `Player: ${userScore}`;
+      computerScore.textContent = `Computer: ${compScore}`;
     }
     if (userScore === 5) {
       message.textContent = "Player wins the game!";
@@ -65,8 +65,8 @@ function playGame() {
       } else if (winner === "computer") {
         compScore += 1;
       }
-      playerScore.textContent = userScore;
-      computerScore.textContent = compScore;
+      playerScore.textContent = `Player: ${userScore}`;
+      computerScore.textContent = `Computer: ${compScore}`;
     }
     if (userScore === 5) {
       message.textContent = "Player wins the game!";
